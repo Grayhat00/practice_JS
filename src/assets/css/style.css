@@ -12,6 +12,27 @@ body {
   font-style: normal;
   color: #000000;
 }
+.loader {
+  display: none;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  /*border-top: 16px solid #3498db;*/
+  border-top: 16px solid #101010;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 .status {
   display: block;
@@ -888,10 +909,19 @@ textarea:focus {
   width: 40rem;
   background-color: #ffffff;
 }
+.popup_content-loader {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 40rem;
+}
 
 .popup_close,
 .popup_engineer_close,
-.popup_calc_end_close {
+.popup_calc_end_close,
+.popup_loading {
   position: absolute;
   top: -2.2rem;
   right: -5rem;
